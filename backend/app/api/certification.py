@@ -1,4 +1,4 @@
-"""Expose demand-transition and release-readiness certification HTTP routes."""
+"""Expose release-readiness certification HTTP routes."""
 
 from typing import Annotated
 
@@ -9,7 +9,7 @@ from app.certification.repository import CertificationRepository
 from app.certification.schemas import ReadinessRequest, ReadinessResponse
 from app.certification.service import CertificationService
 from app.core.database import get_database
-from app.platform.context import IdentityContext
+from app.platform.context import IdentityContext, validate_resource_identifier
 
 router = APIRouter(prefix="/api/v1", tags=["certification"])
 DatabaseDependency = Annotated[AsyncDatabase, Depends(get_database)]
@@ -30,31 +30,13 @@ def get_certification_service(database: DatabaseDependency) -> CertificationServ
 ServiceDependency = Annotated[CertificationService, Depends(get_certification_service)]
 
 
-
-@router.post(
-    "/releases/{release_id}/readiness",
-    response_model=ReadinessResponse,
-    status_code=201,
-    summary="Calculate and persist release readiness",
-)
+@router.post("/releases/{release_id}/readiness", response_model=ReadinessResponse, status_code=200, summary="Calculate and persist release readiness")
 async def calculate_readiness(
     release_id: str,
     command: ReadinessRequest,
     context: IdentityContext,
     service: ServiceDependency,
 ) -> ReadinessResponse:
-    """Calculate a weighted release recommendation and preserve its evidence.
-
-    Args:
-        release_id: Release identifier being evaluated.
-        command: Gate, test, defect, automation, and version evidence.
-        context: Request identity and correlation context.
-        service: Certification business service.
-
-    Returns:
-        Persisted readiness snapshot envelope.
-    """
-    return ReadinessResponse(
-        data=await service.calculate_readiness(release_id, command, context),
-        correlation_id=context.correlation_id,
-    )
+    """Calculate a weighted release recommendation and preserve its evidence."""
+    safe_release_id = validate_resource_identifier(release_id)
+    return ReadinessResponse(data=await service.calculate_readiness(safe_release_id, command, context), correlation_id=context.correlation_id)

@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 DemandState = Literal["submitted", "triaged", "in_progress", "completed", "cancelled"]
 Recommendation = Literal["Ready", "Conditional", "Blocked"]
@@ -12,6 +12,8 @@ Recommendation = Literal["Ready", "Conditional", "Blocked"]
 class DemandTransitionCommand(BaseModel):
     """Capture an optimistic-locking demand state transition request."""
 
+    model_config = ConfigDict(extra="forbid")
+
     destination: DemandState
     expected_version: int = Field(ge=0)
     resolution_note: str | None = Field(default=None, max_length=2000)
@@ -19,7 +21,14 @@ class DemandTransitionCommand(BaseModel):
     @field_validator("resolution_note")
     @classmethod
     def normalize_resolution_note(cls, value: str | None) -> str | None:
-        """Trim optional notes before domain validation evaluates them."""
+        """Trim optional notes before domain validation evaluates them.
+
+        Args:
+            value: Submitted optional resolution note.
+
+        Returns:
+            Trimmed note or ``None``.
+        """
         return value.strip() if value is not None else None
 
 
@@ -44,6 +53,8 @@ class DemandTransitionResponse(BaseModel):
 class ReadinessRequest(BaseModel):
     """Capture scored release-readiness evidence supplied by the operator."""
 
+    model_config = ConfigDict(extra="forbid")
+
     expected_version: int = Field(ge=0)
     applicable_gate_count: int = Field(ge=0)
     passed_gate_count: int = Field(ge=0)
@@ -56,7 +67,18 @@ class ReadinessRequest(BaseModel):
     @field_validator("passed_gate_count")
     @classmethod
     def ensure_passed_gates_are_applicable(cls, value: int, info: object) -> int:
-        """Reject a passed-gate count that exceeds the applicable-gate count."""
+        """Reject a passed-gate count that exceeds the applicable-gate count.
+
+        Args:
+            value: Submitted passed-gate count.
+            info: Pydantic validation context.
+
+        Returns:
+            Validated passed-gate count.
+
+        Raises:
+            ValueError: If passed gates exceed applicable gates.
+        """
         data = getattr(info, "data", {})
         if value > data.get("applicable_gate_count", 0):
             raise ValueError("passed_gate_count cannot exceed applicable_gate_count")

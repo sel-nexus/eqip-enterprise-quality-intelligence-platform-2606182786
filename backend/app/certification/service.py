@@ -3,11 +3,11 @@
 from datetime import UTC, datetime
 from typing import Any
 
-from fastapi import HTTPException
+from fastapi import HTTPException, status
 
 from app.certification.repository import CertificationRepository
 from app.certification.schemas import DemandRecord, DemandTransitionCommand, ReadinessRequest, ReadinessSnapshot
-from app.platform.context import IdentityContext
+from app.platform.context import RequestContext
 
 ALLOWED_TRANSITIONS: dict[str, set[str]] = {
     "submitted": {"triaged", "cancelled"},
@@ -36,12 +36,12 @@ class CertificationService:
         self._repository = repository
 
     async def transition_demand(
-        self, demand_id: str, command: DemandTransitionCommand, context: IdentityContext
+        self, demand_id: str, command: DemandTransitionCommand, context: RequestContext
     ) -> DemandRecord:
-        """Seed a demand on demand and apply one valid optimistic-locking transition.
+        """Apply one valid optimistic-locking transition to an owned demand.
 
         Args:
-            demand_id: Caller-chosen demand identifier.
+            demand_id: Validated caller-supplied demand identifier.
             command: Destination state, version, and optional resolution note.
             context: Request identity and correlation context for auditing.
 
@@ -49,22 +49,30 @@ class CertificationService:
             Persisted demand after the transition.
 
         Raises:
-            HTTPException: If transition, version, or required resolution evidence is invalid.
+            HTTPException: If the demand is missing, inaccessible, or the transition is invalid.
         """
         timestamp = datetime.now(UTC)
         demand = await self._repository.find_demand(demand_id)
         if demand is None:
-            demand = await self._repository.create_demand_if_missing(demand_id, timestamp)
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Demand was not found.")
+        if demand.get("owner_actor_id") != context.actor_id:
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Demand is outside the current actor scope.")
         source = str(demand["state"])
         if command.destination not in ALLOWED_TRANSITIONS[source]:
-            raise HTTPException(status_code=409, detail=f"Transition from {source} to {command.destination} is not allowed.")
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=f"Transition from {source} to {command.destination} is not allowed.")
         if command.destination in {"completed", "cancelled"} and not command.resolution_note:
-            raise HTTPException(status_code=422, detail="resolution_note is required for completed or cancelled demands.")
+            raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="resolution_note is required for completed or cancelled demands.")
         update = await self._repository.transition_demand(
-            demand_id, command.expected_version, source, command.destination, command.resolution_note, timestamp
+            demand_id,
+            context.actor_id,
+            command.expected_version,
+            source,
+            command.destination,
+            command.resolution_note,
+            timestamp,
         )
         if update.matched_count != 1:
-            raise HTTPException(status_code=409, detail="Demand version does not match the persisted version.")
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Demand version does not match the persisted version.")
         updated = await self._repository.find_demand(demand_id)
         if updated is None:
             raise RuntimeError("Demand was not available after transition.")
@@ -83,23 +91,29 @@ class CertificationService:
         return DemandRecord.model_validate(updated)
 
     async def calculate_readiness(
-        self, release_id: str, command: ReadinessRequest, context: IdentityContext
+        self, release_id: str, command: ReadinessRequest, context: RequestContext
     ) -> ReadinessSnapshot:
-        """Calculate and persist a release-readiness snapshot with its evidence.
+        """Calculate and persist an actor-owned release-readiness snapshot.
 
         Args:
-            release_id: Caller-chosen release identifier.
+            release_id: Validated caller-supplied release identifier.
             command: Validated gate, test, defect, automation, and version evidence.
             context: Request identity and correlation context for auditing.
 
         Returns:
             Immutable persisted readiness calculation.
+
+        Raises:
+            HTTPException: If an existing release belongs to another actor or is stale.
         """
         timestamp = datetime.now(UTC)
-        latest = await self._repository.find_latest_readiness(release_id)
+        existing = await self._repository.find_any_readiness(release_id)
+        if existing is not None and existing.get("owner_actor_id") != context.actor_id:
+            raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Release is outside the current actor scope.")
+        latest = await self._repository.find_latest_readiness(release_id, context.actor_id)
         persisted_version = int(latest["version"]) if latest is not None else 0
         if command.expected_version != persisted_version:
-            raise HTTPException(status_code=409, detail="Release version does not match the latest readiness snapshot.")
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Release version does not match the latest readiness snapshot.")
         gate_score = 100.0 if command.applicable_gate_count == 0 else (command.passed_gate_count / command.applicable_gate_count) * 100
         defect_score = max(0.0, 100.0 - (command.open_defect_count * 5.0) - (command.critical_defect_count * 25.0))
         score = round(
@@ -120,6 +134,7 @@ class CertificationService:
             timestamp=timestamp,
         )
         document: dict[str, Any] = snapshot.model_dump()
+        document["owner_actor_id"] = context.actor_id
         await self._repository.insert_readiness_snapshot(document)
         await self._repository.write_audit(
             {

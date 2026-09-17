@@ -21,55 +21,48 @@ class CertificationRepository:
         self._audit = database.get_collection("certification_audit")
 
     async def ensure_indexes(self) -> None:
-        """Create indexes supporting demand and readiness workflow lookups."""
+        """Create indexes supporting actor-scoped workflow lookups."""
         await self._demands.create_index("demand_id", unique=True)
-        await self._readiness.create_index([("release_id", 1), ("timestamp", -1)])
+        await self._readiness.create_index([("release_id", 1), ("owner_actor_id", 1), ("timestamp", -1)])
         await self._audit.create_index([("aggregate_id", 1), ("timestamp", -1)])
 
     async def find_demand(self, demand_id: str) -> dict[str, Any] | None:
-        """Find one demand by its externally supplied identifier."""
-        return await self._demands.find_one({"demand_id": demand_id}, {"_id": 0})
+        """Find one demand by its externally supplied identifier.
 
-    async def create_demand_if_missing(self, demand_id: str, timestamp: datetime) -> dict[str, Any]:
-        """Seed an on-demand submitted demand without replacing existing state."""
-        await self._demands.update_one(
-            {"demand_id": demand_id},
-            {
-                "$setOnInsert": {
-                    "demand_id": demand_id,
-                    "state": "submitted",
-                    "version": 0,
-                    "resolution_note": None,
-                    "history": [
-                        {
-                            "from_state": None,
-                            "to_state": "submitted",
-                            "note": "On-demand demand seed",
-                            "timestamp": timestamp,
-                        }
-                    ],
-                    "updated_at": timestamp,
-                }
-            },
-            upsert=True,
-        )
-        demand = await self.find_demand(demand_id)
-        if demand is None:
-            raise RuntimeError("Demand was not available after on-demand seed.")
-        return demand
+        Args:
+            demand_id: Safe demand identifier.
+
+        Returns:
+            Persisted demand, if present.
+        """
+        return await self._demands.find_one({"demand_id": demand_id}, {"_id": 0})
 
     async def transition_demand(
         self,
         demand_id: str,
+        actor_id: str,
         expected_version: int,
         source: str,
         destination: str,
         resolution_note: str | None,
         timestamp: datetime,
     ) -> UpdateResult:
-        """Atomically apply a state transition only at the expected version."""
+        """Atomically apply an owned state transition only at the expected version.
+
+        Args:
+            demand_id: Safe demand identifier.
+            actor_id: Owning actor for the mutation.
+            expected_version: Optimistic-lock version.
+            source: Current demand state.
+            destination: Requested next demand state.
+            resolution_note: Optional terminal transition evidence.
+            timestamp: Transition timestamp.
+
+        Returns:
+            Mongo update result.
+        """
         return await self._demands.update_one(
-            {"demand_id": demand_id, "version": expected_version},
+            {"demand_id": demand_id, "owner_actor_id": actor_id, "version": expected_version},
             {
                 "$set": {
                     "state": destination,
@@ -88,11 +81,25 @@ class CertificationRepository:
             },
         )
 
-    async def find_latest_readiness(self, release_id: str) -> dict[str, Any] | None:
-        """Find the most recently persisted readiness snapshot for a release."""
-        cursor = self._readiness.find({"release_id": release_id}, {"_id": 0}).sort("timestamp", -1).limit(1)
+    async def find_latest_readiness(self, release_id: str, actor_id: str) -> dict[str, Any] | None:
+        """Find the latest readiness snapshot visible to the owning actor.
+
+        Args:
+            release_id: Safe release identifier.
+            actor_id: Owning actor for the read.
+
+        Returns:
+            Latest actor-scoped readiness snapshot, if present.
+        """
+        cursor = self._readiness.find(
+            {"release_id": release_id, "owner_actor_id": actor_id}, {"_id": 0}
+        ).sort("timestamp", -1).limit(1)
         snapshots = await cursor.to_list(length=1)
         return snapshots[0] if snapshots else None
+
+    async def find_any_readiness(self, release_id: str) -> dict[str, Any] | None:
+        """Find a release snapshot regardless of ownership for authorization checks."""
+        return await self._readiness.find_one({"release_id": release_id}, {"_id": 0})
 
     async def insert_readiness_snapshot(self, snapshot: dict[str, Any]) -> None:
         """Persist one immutable readiness calculation."""

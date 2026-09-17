@@ -25,14 +25,21 @@ export function DemandTransitionForm({ onSubmit }: DemandTransitionFormProps): R
       setError("A resolution note is required for completed or cancelled demands.");
       return;
     }
+
     setLoading(true);
     setError(null);
     try {
-      const transitioned = await onSubmit(demandId.trim(), { destination, expected_version: expectedVersion, resolution_note: resolutionNote });
+      const transitioned = await onSubmit(demandId.trim(), {
+        destination,
+        expected_version: expectedVersion,
+        resolution_note: resolutionNote
+      });
       setResult(transitioned);
       setExpectedVersion(transitioned.version);
     } catch (submitError) {
-      setError(submitError instanceof Error ? submitError.message : "The demand could not be transitioned.");
+      setError(
+        submitError instanceof Error ? submitError.message : "The demand could not be transitioned."
+      );
     } finally {
       setLoading(false);
     }
@@ -44,21 +51,51 @@ export function DemandTransitionForm({ onSubmit }: DemandTransitionFormProps): R
       <h2 id="demand-transition-title">Transition demand</h2>
       <form onSubmit={(event) => void handleSubmit(event)}>
         <label htmlFor="demand-id">Demand ID</label>
-        <input id="demand-id" value={demandId} onChange={(event) => setDemandId(event.target.value)} aria-required="true" />
+        <input
+          id="demand-id"
+          value={demandId}
+          onChange={(event) => setDemandId(event.target.value)}
+          aria-required="true"
+        />
         <label htmlFor="demand-destination">Destination</label>
-        <select id="demand-destination" value={destination} onChange={(event) => setDestination(event.target.value as DemandState)}>
+        <select
+          id="demand-destination"
+          value={destination}
+          onChange={(event) => setDestination(event.target.value as DemandState)}
+        >
           <option value="triaged">Triaged</option>
           <option value="in_progress">In progress</option>
           <option value="completed">Completed</option>
           <option value="cancelled">Cancelled</option>
         </select>
         <label htmlFor="demand-version">Expected version</label>
-        <input id="demand-version" type="number" min="0" value={expectedVersion} onChange={(event) => setExpectedVersion(Number(event.target.value))} aria-required="true" />
+        <input
+          id="demand-version"
+          type="number"
+          min="0"
+          value={expectedVersion}
+          onChange={(event) => setExpectedVersion(Number(event.target.value))}
+          aria-required="true"
+        />
         <label htmlFor="resolution-note">Resolution note</label>
-        <textarea id="resolution-note" value={resolutionNote} onChange={(event) => setResolutionNote(event.target.value)} />
-        {error ? <p className="form-error" role="alert">{error}</p> : null}
-        {result ? <p className="success-notice" aria-live="polite">{result.demand_id} is {result.state.replace("_", " ")} at version {result.version}.</p> : null}
-        <button type="submit" disabled={loading}>{loading ? "Transitioning…" : "Transition demand"}</button>
+        <textarea
+          id="resolution-note"
+          value={resolutionNote}
+          onChange={(event) => setResolutionNote(event.target.value)}
+        />
+        {error ? (
+          <p className="form-error" role="alert">
+            {error}
+          </p>
+        ) : null}
+        {result ? (
+          <p className="success-notice" aria-live="polite">
+            {result.demand_id} is {result.state.replace("_", " ")} at version {result.version}.
+          </p>
+        ) : null}
+        <button type="submit" disabled={loading}>
+          {loading ? "Transitioning…" : "Transition demand"}
+        </button>
       </form>
     </section>
   );

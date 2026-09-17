@@ -13,6 +13,8 @@ Health = Literal["green", "amber", "red"]
 class ApplicationCreate(BaseModel):
     """Validate the command used to create a governed application."""
 
+    model_config = ConfigDict(extra="forbid")
+
     name: str = Field(min_length=1, max_length=160)
     segment_id: str = Field(min_length=1, max_length=80)
     product: str = Field(min_length=1, max_length=120)

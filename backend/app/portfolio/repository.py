@@ -31,15 +31,17 @@ class ApplicationRepository:
             raise RuntimeError("Application insert did not return a persisted document.")
         return created
 
-    async def list(self, limit: int, offset: int) -> tuple[list[dict[str, Any]], int]:
-        """Read a bounded, newest-first page of applications.
+    async def list_for_actor(self, actor_id: str, limit: int, offset: int) -> tuple[list[dict[str, Any]], int]:
+        """Read a bounded, newest-first page visible to one owning actor.
 
         Args:
+            actor_id: Authenticated actor permitted to read the records.
             limit: Maximum number of documents to return.
             offset: Number of documents to skip.
 
         Returns:
-            Page of application documents and complete count.
+            Actor-scoped application documents and complete matching count.
         """
-        cursor = self._collection.find({}, {"_id": 0}).sort("created.at", -1).skip(offset).limit(limit)
-        return await cursor.to_list(length=limit), await self._collection.count_documents({})
+        scope = {"owner_actor_id": actor_id}
+        cursor = self._collection.find(scope, {"_id": 0}).sort("created.at", -1).skip(offset).limit(limit)
+        return await cursor.to_list(length=limit), await self._collection.count_documents(scope)

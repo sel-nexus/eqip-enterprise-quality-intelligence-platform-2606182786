@@ -29,7 +29,7 @@ describe("App", () => {
     const fetchMock = vi.fn()
       .mockResolvedValueOnce(new Response(JSON.stringify({ data: { items: [], total: 0 }, correlation_id: "c-list" }), { status: 200 }))
       .mockResolvedValueOnce(new Response(JSON.stringify({ data: { demand_id: "DEM-READINESS-01", state: "triaged", version: 1, resolution_note: null, history: [], updated_at: "2026-09-17T10:00:00Z" }, correlation_id: "c-demand" }), { status: 200 }))
-      .mockResolvedValueOnce(new Response(JSON.stringify({ data: { release_id: "REL-READINESS-01", version: 1, inputs: { expected_version: 0, applicable_gate_count: 4, passed_gate_count: 4, unwaived_gate_failures: 0, test_pass_rate: 95, open_defect_count: 1, critical_defect_count: 0, automation_coverage: 80 }, weights: { gates: 0.4, tests: 0.3, defects: 0.15, automation: 0.15 }, score: 90.75, recommendation: "Blocked", timestamp: "2026-09-17T10:00:00Z" }, correlation_id: "c-readiness" }), { status: 201 }));
+      .mockResolvedValueOnce(new Response(JSON.stringify({ data: { release_id: "REL-READINESS-01", version: 1, inputs: { expected_version: 0, applicable_gate_count: 4, passed_gate_count: 4, unwaived_gate_failures: 0, test_pass_rate: 95, open_defect_count: 1, critical_defect_count: 0, automation_coverage: 80 }, weights: { gates: 0.4, tests: 0.3, defects: 0.15, automation: 0.15 }, score: 90.75, recommendation: "Blocked", timestamp: "2026-09-17T10:00:00Z" }, correlation_id: "c-readiness" }), { status: 200 }));
     vi.stubGlobal("fetch", fetchMock);
     const user = userEvent.setup();
     render(<App />);

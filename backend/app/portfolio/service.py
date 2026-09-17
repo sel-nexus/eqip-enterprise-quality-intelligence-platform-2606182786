@@ -26,7 +26,7 @@ class ApplicationService:
         self._audit_service = audit_service
 
     async def create(self, command: ApplicationCreate, context: RequestContext) -> ApplicationRecord:
-        """Create an active version-one governed application and audit it.
+        """Create an actor-owned version-one governed application and audit it.
 
         Args:
             command: Validated application create command.
@@ -43,6 +43,7 @@ class ApplicationService:
         document = {
             "business_id": business_id,
             "application_id": business_id,
+            "owner_actor_id": context.actor_id,
             "name": command.name,
             "segment_id": command.segment_id,
             "product": command.product,
@@ -63,17 +64,18 @@ class ApplicationService:
         await self._audit_service.append_created(context, business_id, persisted)
         return self._to_record(persisted)
 
-    async def list(self, limit: int, offset: int) -> tuple[list[ApplicationRecord], int]:
-        """Return a bounded portfolio page.
+    async def list(self, context: RequestContext, limit: int, offset: int) -> tuple[list[ApplicationRecord], int]:
+        """Return a bounded portfolio page visible to the current actor.
 
         Args:
+            context: Authorized request context that defines the ownership scope.
             limit: Maximum results to return.
             offset: Results to skip.
 
         Returns:
-            Serialized applications and total matching count.
+            Serialized actor-scoped applications and total matching count.
         """
-        documents, total = await self._repository.list(limit, offset)
+        documents, total = await self._repository.list_for_actor(context.actor_id, limit, offset)
         return [self._to_record(document) for document in documents], total
 
     @staticmethod
