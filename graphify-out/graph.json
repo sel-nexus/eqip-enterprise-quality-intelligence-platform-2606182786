@@ -38,7 +38,7 @@
       "label": "calculate_readiness()",
       "file_type": "code",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "_callable": true,
       "_origin": "ast"
     },
@@ -60,7 +60,7 @@
     },
     {
       "id": "backend_app_api_certification_rationale_1",
-      "label": "Expose demand-transition and release-readiness certification HTTP routes.",
+      "label": "Expose release-readiness certification HTTP routes.",
       "file_type": "rationale",
       "source_file": "backend/app/api/certification.py",
       "source_location": "L1",
@@ -75,11 +75,11 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_api_certification_rationale_46",
-      "label": "Calculate a weighted release recommendation and preserve its evidence. Args:\u2026",
+      "id": "backend_app_api_certification_rationale_40",
+      "label": "Calculate a weighted release recommendation and preserve its evidence.",
       "file_type": "rationale",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L46",
+      "source_location": "L40",
       "_origin": "ast"
     },
     {
@@ -96,7 +96,7 @@
       "label": "get_application_service()",
       "file_type": "code",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L27",
+      "source_location": "L22",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -114,7 +114,7 @@
       "label": "get_certification_service()",
       "file_type": "code",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L42",
+      "source_location": "L37",
       "_callable": true,
       "_origin": "ast"
     },
@@ -131,7 +131,7 @@
       "label": "create_application()",
       "file_type": "code",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -166,7 +166,7 @@
       "label": "list_applications()",
       "file_type": "code",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -203,7 +203,7 @@
       "label": "transition_demand()",
       "file_type": "code",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "_callable": true,
       "_origin": "ast"
     },
@@ -233,43 +233,43 @@
       "community": 0
     },
     {
-      "id": "backend_app_api_portfolio_rationale_28",
+      "id": "backend_app_api_portfolio_rationale_23",
       "label": "Build the service around the lifespan-owned Mongo database. Args: database:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L28",
+      "source_location": "L23",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_api_portfolio_rationale_43",
+      "id": "backend_app_api_portfolio_rationale_38",
       "label": "Build a demand certification service from the active database. Args: database:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L43",
+      "source_location": "L38",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_api_portfolio_rationale_68",
-      "label": "Persist an active, version-one application. Args: command: Validated\u2026",
+      "id": "backend_app_api_portfolio_rationale_54",
+      "label": "Persist an actor-owned, version-one application.",
       "file_type": "rationale",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L68",
+      "source_location": "L54",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_api_portfolio_rationale_93",
-      "label": "Return a bounded newest-first governed application page. Args: context:\u2026",
+      "id": "backend_app_api_portfolio_rationale_65",
+      "label": "Return a bounded newest-first page within the current actor scope.",
       "file_type": "rationale",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L93",
+      "source_location": "L65",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_api_portfolio_rationale_120",
-      "label": "Move a persisted demand through one allowed workflow state. Args: demand_id:\u2026",
+      "id": "backend_app_api_portfolio_rationale_77",
+      "label": "Move an owned persisted demand through one allowed workflow state.",
       "file_type": "rationale",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L120",
+      "source_location": "L77",
       "_origin": "ast"
     },
     {
@@ -334,11 +334,11 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "label": ".create_demand_if_missing()",
+      "id": "backend_app_certification_repository_certificationrepository_transition_demand",
+      "label": ".transition_demand()",
       "file_type": "code",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L33",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast"
     },
@@ -348,15 +348,6 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "_origin": "ast"
-    },
-    {
-      "id": "backend_app_certification_repository_certificationrepository_transition_demand",
-      "label": ".transition_demand()",
-      "file_type": "code",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L61",
-      "_callable": true,
       "_origin": "ast"
     },
     {
@@ -372,7 +363,16 @@
       "label": ".find_latest_readiness()",
       "file_type": "code",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L91",
+      "source_location": "L84",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_certification_repository_certificationrepository_find_any_readiness",
+      "label": ".find_any_readiness()",
+      "file_type": "code",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L100",
       "_callable": true,
       "_origin": "ast"
     },
@@ -381,7 +381,7 @@
       "label": ".insert_readiness_snapshot()",
       "file_type": "code",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L97",
+      "source_location": "L104",
       "_callable": true,
       "_origin": "ast"
     },
@@ -390,7 +390,7 @@
       "label": ".write_audit()",
       "file_type": "code",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L101",
+      "source_location": "L108",
       "_callable": true,
       "_origin": "ast"
     },
@@ -420,7 +420,7 @@
     },
     {
       "id": "backend_app_certification_repository_rationale_24",
-      "label": "Create indexes supporting demand and readiness workflow lookups.",
+      "label": "Create indexes supporting actor-scoped workflow lookups.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
       "source_location": "L24",
@@ -428,50 +428,50 @@
     },
     {
       "id": "backend_app_certification_repository_rationale_30",
-      "label": "Find one demand by its externally supplied identifier.",
+      "label": "Find one demand by its externally supplied identifier. Args: demand_id: Safe\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
       "source_location": "L30",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_rationale_34",
-      "label": "Seed an on-demand submitted demand without replacing existing state.",
+      "id": "backend_app_certification_repository_rationale_50",
+      "label": "Atomically apply an owned state transition only at the expected version. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L34",
+      "source_location": "L50",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_rationale_70",
-      "label": "Atomically apply a state transition only at the expected version.",
+      "id": "backend_app_certification_repository_rationale_85",
+      "label": "Find the latest readiness snapshot visible to the owning actor. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L70",
+      "source_location": "L85",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_rationale_92",
-      "label": "Find the most recently persisted readiness snapshot for a release.",
+      "id": "backend_app_certification_repository_rationale_101",
+      "label": "Find a release snapshot regardless of ownership for authorization checks.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L92",
+      "source_location": "L101",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_rationale_98",
+      "id": "backend_app_certification_repository_rationale_105",
       "label": "Persist one immutable readiness calculation.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L98",
+      "source_location": "L105",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_repository_rationale_102",
+      "id": "backend_app_certification_repository_rationale_109",
       "label": "Persist an audit event for a certification decision.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L102",
+      "source_location": "L109",
       "_origin": "ast"
     },
     {
@@ -513,7 +513,7 @@
       "label": ".normalize_resolution_note()",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast"
     },
@@ -522,7 +522,7 @@
       "label": "DemandRecord",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L26",
+      "source_location": "L35",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -532,7 +532,7 @@
       "label": "DemandTransitionResponse",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L37",
+      "source_location": "L46",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -542,7 +542,7 @@
       "label": "ReadinessRequest",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L44",
+      "source_location": "L53",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -552,7 +552,7 @@
       "label": ".ensure_passed_gates_are_applicable()",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L58",
+      "source_location": "L69",
       "_callable": true,
       "_origin": "ast"
     },
@@ -561,7 +561,7 @@
       "label": "ReadinessSnapshot",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L66",
+      "source_location": "L88",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -571,7 +571,7 @@
       "label": "ReadinessResponse",
       "file_type": "code",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L78",
+      "source_location": "L100",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast"
@@ -593,59 +593,59 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_22",
-      "label": "Trim optional notes before domain validation evaluates them.",
+      "id": "backend_app_certification_schemas_rationale_24",
+      "label": "Trim optional notes before domain validation evaluates them. Args: value:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_27",
+      "id": "backend_app_certification_schemas_rationale_36",
       "label": "Return the persisted demand state and complete transition history.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L27",
+      "source_location": "L36",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_38",
+      "id": "backend_app_certification_schemas_rationale_47",
       "label": "Wrap a transitioned demand in the API's standard response envelope.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L38",
+      "source_location": "L47",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_45",
+      "id": "backend_app_certification_schemas_rationale_54",
       "label": "Capture scored release-readiness evidence supplied by the operator.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L45",
+      "source_location": "L54",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_59",
-      "label": "Reject a passed-gate count that exceeds the applicable-gate count.",
+      "id": "backend_app_certification_schemas_rationale_70",
+      "label": "Reject a passed-gate count that exceeds the applicable-gate count. Args: value:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L59",
+      "source_location": "L70",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_67",
+      "id": "backend_app_certification_schemas_rationale_89",
       "label": "Return a persisted, explainable readiness calculation.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L67",
+      "source_location": "L89",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_schemas_rationale_79",
+      "id": "backend_app_certification_schemas_rationale_101",
       "label": "Wrap a persisted readiness snapshot in the API response envelope.",
       "file_type": "rationale",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L79",
+      "source_location": "L101",
       "_origin": "ast"
     },
     {
@@ -693,14 +693,6 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_service_py_identitycontext",
-      "label": "IdentityContext",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast"
-    },
-    {
       "id": "demandrecord",
       "label": "DemandRecord",
       "file_type": "code",
@@ -713,7 +705,7 @@
       "label": ".calculate_readiness()",
       "file_type": "code",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L85",
+      "source_location": "L93",
       "_callable": true,
       "_origin": "ast"
     },
@@ -751,18 +743,18 @@
     },
     {
       "id": "backend_app_certification_service_rationale_41",
-      "label": "Seed a demand on demand and apply one valid optimistic-locking transition.\u2026",
+      "label": "Apply one valid optimistic-locking transition to an owned demand. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/service.py",
       "source_location": "L41",
       "_origin": "ast"
     },
     {
-      "id": "backend_app_certification_service_rationale_88",
-      "label": "Calculate and persist a release-readiness snapshot with its evidence. Args:\u2026",
+      "id": "backend_app_certification_service_rationale_96",
+      "label": "Calculate and persist an actor-owned release-readiness snapshot. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L88",
+      "source_location": "L96",
       "_origin": "ast"
     },
     {
@@ -1250,7 +1242,7 @@
       "label": "RequestContext",
       "file_type": "code",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1261,7 +1253,7 @@
       "label": "ensure_request_context()",
       "file_type": "code",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L20",
+      "source_location": "L23",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -1276,11 +1268,20 @@
       "community": 2
     },
     {
+      "id": "backend_app_platform_context_validate_resource_identifier",
+      "label": "validate_resource_identifier()",
+      "file_type": "code",
+      "source_file": "backend/app/platform/context.py",
+      "source_location": "L37",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_app_platform_context_get_development_identity",
       "label": "get_development_identity()",
       "file_type": "code",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -1296,7 +1297,7 @@
     },
     {
       "id": "backend_app_platform_context_rationale_1",
-      "label": "Provide request correlation and configured development identity.",
+      "label": "Provide request correlation, safe identifiers, and development identity.",
       "file_type": "rationale",
       "source_file": "backend/app/platform/context.py",
       "source_location": "L1",
@@ -1304,31 +1305,36 @@
       "community": 2
     },
     {
-      "id": "backend_app_platform_context_rationale_14",
+      "id": "backend_app_platform_context_rationale_17",
       "label": "Represent an authenticated actor and request correlation id.",
       "file_type": "rationale",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L14",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L17",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_platform_context_rationale_21",
+      "id": "backend_app_platform_context_rationale_24",
       "label": "Assign and return a request correlation identifier. Args: request: Current\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L24",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_platform_context_rationale_39",
+      "id": "backend_app_platform_context_rationale_38",
+      "label": "Reject Mongo operators and markup from externally supplied resource IDs. Args:\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/app/platform/context.py",
+      "source_location": "L38",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_app_platform_context_rationale_59",
       "label": "Resolve the configured local identity for protected business routes. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L39",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L59",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_platform_errors",
@@ -1530,14 +1536,13 @@
       "community": 8
     },
     {
-      "id": "backend_app_portfolio_repository_applicationrepository_list",
-      "label": ".list()",
+      "id": "backend_app_portfolio_repository_applicationrepository_list_for_actor",
+      "label": ".list_for_actor()",
       "file_type": "code",
       "source_file": "backend/app/portfolio/repository.py",
       "source_location": "L34",
       "_callable": true,
-      "_origin": "ast",
-      "community": 8
+      "_origin": "ast"
     },
     {
       "id": "backend_app_portfolio_repository_rationale_1",
@@ -1577,7 +1582,7 @@
     },
     {
       "id": "backend_app_portfolio_repository_rationale_35",
-      "label": "Read a bounded, newest-first page of applications. Args: limit: Maximum number\u2026",
+      "label": "Read a bounded, newest-first page visible to one owning actor. Args: actor_id:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/repository.py",
       "source_location": "L35",
@@ -1626,7 +1631,7 @@
       "label": ".reject_blank_text()",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L28",
+      "source_location": "L30",
       "_callable": true,
       "_origin": "ast",
       "community": 9
@@ -1636,7 +1641,7 @@
       "label": ".normalize_nonempty_list()",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "_callable": true,
       "_origin": "ast",
       "community": 9
@@ -1646,7 +1651,7 @@
       "label": "ApplicationRecord",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L65",
+      "source_location": "L67",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1657,7 +1662,7 @@
       "label": "CreateApplicationResponse",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L85",
+      "source_location": "L87",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1668,7 +1673,7 @@
       "label": "ApplicationListData",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L92",
+      "source_location": "L94",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1679,7 +1684,7 @@
       "label": "ApplicationListResponse",
       "file_type": "code",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L99",
+      "source_location": "L101",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
@@ -1704,58 +1709,52 @@
       "community": 0
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_29",
+      "id": "backend_app_portfolio_schemas_rationale_31",
       "label": "Normalize text and reject whitespace-only command values. Args: value:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L29",
-      "_origin": "ast",
-      "community": 9
+      "source_location": "L31",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_48",
+      "id": "backend_app_portfolio_schemas_rationale_50",
       "label": "Trim list values and reject blank entries. Args: values: Submitted string\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L48",
-      "_origin": "ast",
-      "community": 9
+      "source_location": "L50",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_66",
+      "id": "backend_app_portfolio_schemas_rationale_68",
       "label": "Expose a persisted governed application without Mongo internals.",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L66",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L68",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_86",
+      "id": "backend_app_portfolio_schemas_rationale_88",
       "label": "Wrap a created application with its request correlation id.",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L86",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L88",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_93",
+      "id": "backend_app_portfolio_schemas_rationale_95",
       "label": "Describe bounded application collection results.",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L93",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L95",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_schemas_rationale_100",
+      "id": "backend_app_portfolio_schemas_rationale_102",
       "label": "Wrap a bounded application collection response.",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L100",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L102",
+      "_origin": "ast"
     },
     {
       "id": "backend_app_portfolio_service",
@@ -1811,7 +1810,7 @@
       "label": ".list()",
       "file_type": "code",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L66",
+      "source_location": "L67",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1821,7 +1820,7 @@
       "label": "._to_record()",
       "file_type": "code",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L80",
+      "source_location": "L82",
       "_callable": true,
       "_origin": "ast",
       "community": 0
@@ -1855,7 +1854,7 @@
     },
     {
       "id": "backend_app_portfolio_service_rationale_29",
-      "label": "Create an active version-one governed application and audit it. Args: command:\u2026",
+      "label": "Create an actor-owned version-one governed application and audit it. Args:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/service.py",
       "source_location": "L29",
@@ -1863,22 +1862,20 @@
       "community": 0
     },
     {
-      "id": "backend_app_portfolio_service_rationale_67",
-      "label": "Return a bounded portfolio page. Args: limit: Maximum results to return.\u2026",
+      "id": "backend_app_portfolio_service_rationale_68",
+      "label": "Return a bounded portfolio page visible to the current actor. Args: context:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L67",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L68",
+      "_origin": "ast"
     },
     {
-      "id": "backend_app_portfolio_service_rationale_81",
+      "id": "backend_app_portfolio_service_rationale_83",
       "label": "Map internal Mongo document fields to a public record. Args: document:\u2026",
       "file_type": "rationale",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L81",
-      "_origin": "ast",
-      "community": 0
+      "source_location": "L83",
+      "_origin": "ast"
     },
     {
       "id": "backend_tests_test_certification",
@@ -1901,7 +1898,7 @@
       "label": "clear_certification_collections()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1910,7 +1907,7 @@
       "label": "client()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L39",
+      "source_location": "L40",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1923,6 +1920,24 @@
       "_origin": "ast"
     },
     {
+      "id": "backend_tests_test_certification_seed_demand",
+      "label": "seed_demand()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L47",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_readiness_payload",
+      "label": "readiness_payload()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L59",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
       "id": "backend_tests_test_certification_py_asyncio",
       "label": "asyncio",
       "file_type": "code",
@@ -1931,38 +1946,64 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
-      "label": "test_transition_persists_history_and_requires_current_version()",
+      "id": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
+      "label": "test_missing_and_cross_scope_demands_return_404_and_403_without_audit()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L47",
+      "source_location": "L69",
       "_callable": true,
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_test_transition_rejects_invalid_path_and_blank_terminal_note",
-      "label": "test_transition_rejects_invalid_path_and_blank_terminal_note()",
+      "id": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
+      "label": "test_transition_persists_history_and_rejects_stale_version()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L66",
+      "source_location": "L85",
       "_callable": true,
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
-      "label": "test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure()",
+      "id": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
+      "label": "test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L75",
+      "source_location": "L95",
       "_callable": true,
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_test_readiness_rejects_more_passed_than_applicable_gates",
-      "label": "test_readiness_rejects_more_passed_than_applicable_gates()",
+      "id": "backend_tests_test_certification_py_parametrize",
+      "label": "parametrize",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "label": "test_readiness_invalid_fields_return_problem_details_without_persistence()",
       "file_type": "code",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L92",
+      "source_location": "L114",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "label": "test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L127",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "label": "test_readiness_blocked_recommendation_persists_owned_snapshot()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L139",
       "_callable": true,
       "_origin": "ast"
     },
@@ -1975,51 +2016,83 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_rationale_24",
+      "id": "backend_tests_test_certification_rationale_25",
       "label": "Isolate certification assertions in a real Mongo database.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_rationale_40",
+      "id": "backend_tests_test_certification_rationale_41",
       "label": "Provide an ASGI client running the real FastAPI lifespan.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L40",
+      "source_location": "L41",
       "_origin": "ast"
     },
     {
       "id": "backend_tests_test_certification_rationale_48",
-      "label": "Persist a valid demand transition and reject a stale write.",
+      "label": "Seed an explicitly owned demand document in the real Mongo database.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
       "source_location": "L48",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_rationale_67",
-      "label": "Reject terminal evidence gaps and impossible state changes.",
+      "id": "backend_tests_test_certification_rationale_60",
+      "label": "Build valid readiness input with optional branch-specific overrides.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L67",
+      "source_location": "L60",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_rationale_76",
-      "label": "Store explainable readiness evidence and force a blocked recommendation.",
+      "id": "backend_tests_test_certification_rationale_70",
+      "label": "Remove auto-seeding and deny mutation of another actor's persisted demand.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L76",
+      "source_location": "L70",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_certification_rationale_93",
-      "label": "Reject an internally inconsistent readiness submission.",
+      "id": "backend_tests_test_certification_rationale_86",
+      "label": "Persist a valid owned demand transition and reject a stale mutation.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L93",
+      "source_location": "L86",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_rationale_96",
+      "label": "Require terminal evidence and reject Mongo-operator or XSS-shaped IDs safely.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L96",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_rationale_115",
+      "label": "Reject isolated field and unknown-field defects without snapshots or audits.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L115",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_rationale_128",
+      "label": "Cover zero gates, recommendation thresholds, stale version, and actor scope.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L128",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_certification_rationale_140",
+      "label": "Force a blocked recommendation and verify its real Mongo ownership.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L140",
       "_origin": "ast"
     },
     {
@@ -2043,7 +2116,7 @@
       "label": "reset_workflow_data()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "_callable": true,
       "_origin": "ast"
     },
@@ -2056,36 +2129,70 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_integration_test_portfolio_to_demand_to_readiness_journey_persists_all_workflow_records",
-      "label": "test_portfolio_to_demand_to_readiness_journey_persists_all_workflow_records()",
+      "id": "backend_tests_test_integration_test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records",
+      "label": "test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records()",
       "file_type": "code",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L38",
+      "source_location": "L39",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_test_cross_scope_failure_keeps_all_collections_and_audits_consistent",
+      "label": "test_cross_scope_failure_keeps_all_collections_and_audits_consistent()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L57",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans",
+      "label": "test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L81",
       "_callable": true,
       "_origin": "ast"
     },
     {
       "id": "backend_tests_test_integration_rationale_1",
-      "label": "Verify the cross-feature portfolio and certification workflow using real\u2026",
+      "label": "Verify cross-feature workflow consistency using real MongoDB.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_integration.py",
       "source_location": "L1",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_integration_rationale_24",
-      "label": "Clean all collections the cross-feature journey traverses.",
+      "id": "backend_tests_test_integration_rationale_25",
+      "label": "Clean all collections traversed by each cross-feature journey.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_integration_rationale_39",
-      "label": "Chain application registration, demand execution, and release assessment.",
+      "id": "backend_tests_test_integration_rationale_40",
+      "label": "Chain an actor's portfolio registration, demand, and readiness snapshot.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L39",
+      "source_location": "L40",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_58",
+      "label": "Verify a denied cross-scope mutation creates no partial state or audit event.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L58",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_integration_rationale_82",
+      "label": "Reject an upstream demand mutation, then persist an independent readiness\u2026",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L82",
       "_origin": "ast"
     },
     {
@@ -2110,7 +2217,7 @@
       "label": "clear_test_collections()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L24",
+      "source_location": "L31",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -2120,7 +2227,7 @@
       "label": "client()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L44",
+      "source_location": "L47",
       "_callable": true,
       "_origin": "ast",
       "community": 2
@@ -2138,10 +2245,19 @@
       "label": "valid_payload()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L56",
+      "source_location": "L54",
       "_callable": true,
       "_origin": "ast",
       "community": 2
+    },
+    {
+      "id": "backend_tests_test_portfolio_collection_counts",
+      "label": "collection_counts()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L69",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "backend_tests_test_portfolio_py_asyncio",
@@ -2152,44 +2268,75 @@
       "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
-      "label": "test_create_application_persists_record_and_audit_event()",
+      "id": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
+      "label": "test_create_persists_actor_segment_scope_and_audit_event()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L76",
+      "source_location": "L80",
       "_callable": true,
-      "_origin": "ast",
-      "community": 2
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
-      "label": "test_invalid_application_returns_problem_details_and_persists_nothing()",
+      "id": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
+      "label": "test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L100",
+      "source_location": "L97",
       "_callable": true,
-      "_origin": "ast",
-      "community": 2
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
-      "label": "test_list_is_bounded_and_requires_configured_identity()",
+      "id": "backend_tests_test_portfolio_py_parametrize",
+      "label": "parametrize",
       "file_type": "code",
-      "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L122",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_test_production_auth_mode_rejects_development_identity",
-      "label": "test_production_auth_mode_rejects_development_identity()",
+      "id": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
+      "label": "test_invalid_or_boundary_application_fields_return_problem_details_without_writes()",
       "file_type": "code",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L139",
+      "source_location": "L107",
       "_callable": true,
-      "_origin": "ast",
-      "community": 2
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "label": "test_unknown_fields_and_xss_like_input_are_rejected_without_persistence()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L120",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "label": "test_duplicate_unique_index_conflict_writes_no_success_audit()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L137",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "label": "test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L157",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_test_invalid_development_identity_returns_401",
+      "label": "test_invalid_development_identity_returns_401()",
+      "file_type": "code",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L173",
+      "_callable": true,
+      "_origin": "ast"
     },
     {
       "id": "backend_tests_test_portfolio_rationale_1",
@@ -2201,67 +2348,100 @@
       "community": 2
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_25",
-      "label": "Clear real test-database collections before and after each case. Yields:\u2026",
+      "id": "backend_tests_test_portfolio_rationale_32",
+      "label": "Clear real test-database collections before and after each case.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L32",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_45",
-      "label": "Run requests through the real app lifespan and ASGI boundary. Yields: HTTP\u2026",
+      "id": "backend_tests_test_portfolio_rationale_48",
+      "label": "Run requests through the real app lifespan and ASGI boundary.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L45",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L48",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_57",
-      "label": "Return a representative LLD-conformant create payload. Returns: Valid create\u2026",
+      "id": "backend_tests_test_portfolio_rationale_55",
+      "label": "Return a representative LLD-conformant create payload.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L57",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L55",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_77",
-      "label": "Create an application and verify persisted governed state and audit.",
+      "id": "backend_tests_test_portfolio_rationale_70",
+      "label": "Return application and audit-event counts from the real test database.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L70",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_101",
-      "label": "Reject invalid governed input before it can reach persistence.",
+      "id": "backend_tests_test_portfolio_rationale_81",
+      "label": "Create an application and verify real Mongo ownership and audit state.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L101",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L81",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_123",
-      "label": "List persisted data through protected bounded portfolio API.",
+      "id": "backend_tests_test_portfolio_rationale_98",
+      "label": "Verify actor A cannot list applications persisted by actor B.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L123",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L98",
+      "_origin": "ast"
     },
     {
-      "id": "backend_tests_test_portfolio_rationale_140",
-      "label": "Confirm the configured development identity does not claim production auth.",
+      "id": "backend_tests_test_portfolio_rationale_110",
+      "label": "Reject isolated invalid application fields before any database write.",
       "file_type": "rationale",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L140",
-      "_origin": "ast",
-      "community": 2
+      "source_location": "L110",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_rationale_121",
+      "label": "Forbid unknown JSON fields and ensure markup-like content is safely inert.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L121",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_rationale_138",
+      "label": "Map a real Mongo unique-index collision to validation without an audit event.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L138",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_rationale_158",
+      "label": "Reject absent and invalid development headers through the protected HTTP route.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L158",
+      "_origin": "ast"
+    },
+    {
+      "id": "backend_tests_test_portfolio_rationale_174",
+      "label": "Reject a malformed local actor header rather than using it as a Mongo scope.",
+      "file_type": "rationale",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L174",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_e2e_demand_spec",
+      "label": "demand.spec.ts",
+      "file_type": "code",
+      "source_file": "frontend/e2e/demand.spec.ts",
+      "source_location": "L1",
+      "_origin": "ast"
     },
     {
       "id": "frontend_e2e_portfolio_spec",
@@ -2708,6 +2888,14 @@
       "community": 4
     },
     {
+      "id": "frontend_src_components_applicationform_test",
+      "label": "ApplicationForm.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ApplicationForm.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_components_applicationform",
       "label": "ApplicationForm.tsx",
       "file_type": "code",
@@ -2758,6 +2946,22 @@
       "community": 4
     },
     {
+      "id": "frontend_src_components_applicationtable_test",
+      "label": "ApplicationTable.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_applicationtable_test_application",
+      "label": "application",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_components_applicationtable",
       "label": "ApplicationTable.tsx",
       "file_type": "code",
@@ -2788,6 +2992,22 @@
       "community": 4
     },
     {
+      "id": "frontend_src_components_demandtransitionform_test",
+      "label": "DemandTransitionForm.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_demandtransitionform_test_transitioneddemand",
+      "label": "transitionedDemand",
+      "file_type": "code",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
       "id": "frontend_src_components_demandtransitionform",
       "label": "DemandTransitionForm.tsx",
       "file_type": "code",
@@ -2812,6 +3032,22 @@
       "source_file": "frontend/src/components/DemandTransitionForm.tsx",
       "source_location": "L9",
       "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_readinesspanel_test",
+      "label": "ReadinessPanel.test.tsx",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "frontend_src_components_readinesspanel_test_snapshot",
+      "label": "snapshot",
+      "file_type": "code",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L8",
       "_origin": "ast"
     },
     {
@@ -3299,7 +3535,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L34",
+      "source_location": "L33",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3310,7 +3546,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3321,7 +3557,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3332,7 +3568,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3343,7 +3579,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3354,7 +3590,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L40",
+      "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3376,7 +3612,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L57",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3401,12 +3637,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_certification_rationale_46",
+      "source": "backend_app_api_certification_rationale_40",
       "target": "backend_app_api_certification_calculate_readiness",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/certification.py",
-      "source_location": "L46",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3416,7 +3652,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L27",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3427,7 +3663,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L27",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3438,7 +3674,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L27",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3448,7 +3684,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L42",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3459,7 +3695,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L42",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3470,7 +3706,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L42",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3480,7 +3716,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L57",
+      "source_location": "L52",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3491,7 +3727,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3502,7 +3738,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3513,7 +3749,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3524,7 +3760,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3535,7 +3771,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3545,7 +3781,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L81",
+      "source_location": "L58",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3556,7 +3792,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3567,7 +3803,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3578,7 +3814,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3589,7 +3825,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3600,7 +3836,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3611,7 +3847,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3622,7 +3858,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3633,7 +3869,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3644,7 +3880,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L87",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3654,7 +3890,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L108",
+      "source_location": "L70",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -3665,7 +3901,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3676,7 +3912,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3687,7 +3923,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3698,7 +3934,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3709,7 +3945,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L114",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3720,7 +3956,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3731,7 +3967,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L51",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3742,7 +3978,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L78",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3753,7 +3989,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L105",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3764,7 +4000,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L131",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3779,52 +4015,52 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_portfolio_rationale_28",
+      "source": "backend_app_api_portfolio_rationale_23",
       "target": "backend_app_api_portfolio_get_application_service",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L28",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_portfolio_rationale_43",
+      "source": "backend_app_api_portfolio_rationale_38",
       "target": "backend_app_api_portfolio_get_certification_service",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L43",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_portfolio_rationale_68",
+      "source": "backend_app_api_portfolio_rationale_54",
       "target": "backend_app_api_portfolio_create_application",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L68",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_portfolio_rationale_93",
+      "source": "backend_app_api_portfolio_rationale_65",
       "target": "backend_app_api_portfolio_list_applications",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L93",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_api_portfolio_rationale_120",
+      "source": "backend_app_api_portfolio_rationale_77",
       "target": "backend_app_api_portfolio_transition_demand",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L120",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3903,43 +4139,11 @@
     },
     {
       "source": "backend_app_certification_repository_certificationrepository",
-      "target": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "target": "datetime",
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "target": "backend_app_certification_repository_py_any",
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L33",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_certification_repository_certificationrepository",
       "target": "backend_app_certification_repository_certificationrepository_transition_demand",
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L61",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3950,7 +4154,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L61",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3961,7 +4165,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L61",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3971,7 +4175,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L91",
+      "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3982,7 +4186,28 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L91",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_certification_repository_certificationrepository",
+      "target": "backend_app_certification_repository_certificationrepository_find_any_readiness",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_certification_repository_certificationrepository_find_any_readiness",
+      "target": "backend_app_certification_repository_py_any",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -3992,7 +4217,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L97",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4003,7 +4228,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L97",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4013,7 +4238,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L101",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4024,18 +4249,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L101",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "target": "backend_app_certification_repository_certificationrepository_find_demand",
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L56",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4090,52 +4304,52 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_repository_rationale_34",
-      "target": "backend_app_certification_repository_certificationrepository_create_demand_if_missing",
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/certification/repository.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_app_certification_repository_rationale_70",
+      "source": "backend_app_certification_repository_rationale_50",
       "target": "backend_app_certification_repository_certificationrepository_transition_demand",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L70",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_repository_rationale_92",
+      "source": "backend_app_certification_repository_rationale_85",
       "target": "backend_app_certification_repository_certificationrepository_find_latest_readiness",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L92",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_repository_rationale_98",
+      "source": "backend_app_certification_repository_rationale_101",
+      "target": "backend_app_certification_repository_certificationrepository_find_any_readiness",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_certification_repository_rationale_105",
       "target": "backend_app_certification_repository_certificationrepository_insert_readiness_snapshot",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L98",
+      "source_location": "L105",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_repository_rationale_102",
+      "source": "backend_app_certification_repository_rationale_109",
       "target": "backend_app_certification_repository_certificationrepository_write_audit",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/repository.py",
-      "source_location": "L102",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4176,7 +4390,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L19",
+      "source_location": "L21",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -4187,7 +4401,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4197,7 +4411,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L26",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4207,7 +4421,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L26",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4217,7 +4431,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L37",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4227,7 +4441,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L37",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4237,7 +4451,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L44",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4247,7 +4461,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L44",
+      "source_location": "L53",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4257,7 +4471,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L56",
+      "source_location": "L67",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -4268,7 +4482,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L58",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4278,7 +4492,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L66",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4288,7 +4502,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L66",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4298,7 +4512,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L78",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4308,7 +4522,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L78",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4333,72 +4547,72 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_22",
+      "source": "backend_app_certification_schemas_rationale_24",
       "target": "backend_app_certification_schemas_demandtransitioncommand_normalize_resolution_note",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_27",
+      "source": "backend_app_certification_schemas_rationale_36",
       "target": "backend_app_certification_schemas_demandrecord",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L27",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_38",
+      "source": "backend_app_certification_schemas_rationale_47",
       "target": "backend_app_certification_schemas_demandtransitionresponse",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L38",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_45",
+      "source": "backend_app_certification_schemas_rationale_54",
       "target": "backend_app_certification_schemas_readinessrequest",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L45",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_59",
+      "source": "backend_app_certification_schemas_rationale_70",
       "target": "backend_app_certification_schemas_readinessrequest_ensure_passed_gates_are_applicable",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L59",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_67",
+      "source": "backend_app_certification_schemas_rationale_89",
       "target": "backend_app_certification_schemas_readinesssnapshot",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L67",
+      "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_schemas_rationale_79",
+      "source": "backend_app_certification_schemas_rationale_101",
       "target": "backend_app_certification_schemas_readinessresponse",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/schemas.py",
-      "source_location": "L79",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4467,7 +4681,7 @@
     },
     {
       "source": "backend_app_certification_service_certificationservice_transition_demand",
-      "target": "backend_app_certification_service_py_identitycontext",
+      "target": "backend_app_platform_context_requestcontext",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
@@ -4493,7 +4707,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L85",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4504,18 +4718,18 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L85",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_app_certification_service_certificationservice_calculate_readiness",
-      "target": "backend_app_certification_service_py_identitycontext",
+      "target": "backend_app_platform_context_requestcontext",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L85",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4526,7 +4740,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L85",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4537,7 +4751,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L113",
+      "source_location": "L127",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -4582,12 +4796,12 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_certification_service_rationale_88",
+      "source": "backend_app_certification_service_rationale_96",
       "target": "backend_app_certification_service_certificationservice_calculate_readiness",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
-      "source_location": "L88",
+      "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5266,7 +5480,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L13",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5276,7 +5490,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L20",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5287,7 +5501,17 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L20",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_platform_context",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/platform/context.py",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5297,7 +5521,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5308,7 +5532,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5319,7 +5543,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5330,7 +5554,7 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5341,7 +5565,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L34",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5352,7 +5576,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L57",
+      "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5363,7 +5587,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L61",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5378,32 +5602,42 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_platform_context_rationale_14",
+      "source": "backend_app_platform_context_rationale_17",
       "target": "backend_app_platform_context_requestcontext",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L14",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_platform_context_rationale_21",
+      "source": "backend_app_platform_context_rationale_24",
       "target": "backend_app_platform_context_ensure_request_context",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_platform_context_rationale_39",
+      "source": "backend_app_platform_context_rationale_38",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/platform/context.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_platform_context_rationale_59",
       "target": "backend_app_platform_context_get_development_identity",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L39",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5648,7 +5882,7 @@
     },
     {
       "source": "backend_app_portfolio_repository_applicationrepository",
-      "target": "backend_app_portfolio_repository_applicationrepository_list",
+      "target": "backend_app_portfolio_repository_applicationrepository_list_for_actor",
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/repository.py",
@@ -5657,7 +5891,7 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_repository_applicationrepository_list",
+      "source": "backend_app_portfolio_repository_applicationrepository_list_for_actor",
       "target": "backend_app_portfolio_repository_py_any",
       "relation": "references",
       "context": "generic_arg",
@@ -5709,7 +5943,7 @@
     },
     {
       "source": "backend_app_portfolio_repository_rationale_35",
-      "target": "backend_app_portfolio_repository_applicationrepository_list",
+      "target": "backend_app_portfolio_repository_applicationrepository_list_for_actor",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/repository.py",
@@ -5754,7 +5988,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -5765,7 +5999,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5775,7 +6009,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L45",
+      "source_location": "L47",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -5786,7 +6020,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L47",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5796,7 +6030,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L65",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5806,7 +6040,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L65",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5816,7 +6050,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L85",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5826,7 +6060,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L85",
+      "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5836,7 +6070,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5846,7 +6080,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L92",
+      "source_location": "L94",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5856,7 +6090,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L99",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5866,7 +6100,7 @@
       "relation": "inherits",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L99",
+      "source_location": "L101",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -5891,62 +6125,62 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_29",
+      "source": "backend_app_portfolio_schemas_rationale_31",
       "target": "backend_app_portfolio_schemas_applicationcreate_reject_blank_text",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_48",
+      "source": "backend_app_portfolio_schemas_rationale_50",
       "target": "backend_app_portfolio_schemas_applicationcreate_normalize_nonempty_list",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L48",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_66",
+      "source": "backend_app_portfolio_schemas_rationale_68",
       "target": "backend_app_portfolio_schemas_applicationrecord",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L66",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_86",
+      "source": "backend_app_portfolio_schemas_rationale_88",
       "target": "backend_app_portfolio_schemas_createapplicationresponse",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L86",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_93",
+      "source": "backend_app_portfolio_schemas_rationale_95",
       "target": "backend_app_portfolio_schemas_applicationlistdata",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_schemas_rationale_100",
+      "source": "backend_app_portfolio_schemas_rationale_102",
       "target": "backend_app_portfolio_schemas_applicationlistresponse",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/schemas.py",
-      "source_location": "L100",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6052,7 +6286,18 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L66",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_portfolio_service_applicationservice_list",
+      "target": "backend_app_platform_context_requestcontext",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/portfolio/service.py",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6063,7 +6308,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6073,7 +6318,7 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L80",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6084,7 +6329,7 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L80",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6095,7 +6340,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6106,7 +6351,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L77",
+      "source_location": "L79",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6117,7 +6362,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L93",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6162,22 +6407,33 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_service_rationale_67",
+      "source": "backend_app_portfolio_service_rationale_68",
       "target": "backend_app_portfolio_service_applicationservice_list",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L67",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_app_portfolio_service_rationale_81",
+      "source": "backend_app_portfolio_service_rationale_83",
       "target": "backend_app_portfolio_service_applicationservice_to_record",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L81",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6187,7 +6443,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -6198,7 +6454,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6208,7 +6464,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -6219,7 +6475,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6230,24 +6486,13 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
-      "target": "backend_tests_test_certification_py_asyncio",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_certification.py",
-      "source_location": "L46",
-      "weight": 1.0,
-      "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_certification",
-      "target": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
+      "target": "backend_tests_test_certification_seed_demand",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
@@ -6256,109 +6501,215 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
-      "target": "backend_tests_test_certification_py_asyncclient",
-      "relation": "references",
-      "context": "parameter_type",
+      "source": "backend_tests_test_certification",
+      "target": "backend_tests_test_certification_readiness_payload",
+      "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L47",
+      "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_transition_rejects_invalid_path_and_blank_terminal_note",
+      "source": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
       "target": "backend_tests_test_certification_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L65",
+      "source_location": "L68",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_certification",
-      "target": "backend_tests_test_certification_test_transition_rejects_invalid_path_and_blank_terminal_note",
+      "target": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L66",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_transition_rejects_invalid_path_and_blank_terminal_note",
+      "source": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
       "target": "backend_tests_test_certification_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L66",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
+      "source": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
       "target": "backend_tests_test_certification_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L74",
+      "source_location": "L84",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_certification",
-      "target": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
+      "target": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L75",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
+      "source": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
       "target": "backend_tests_test_certification_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L75",
+      "source_location": "L85",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_readiness_rejects_more_passed_than_applicable_gates",
+      "source": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
       "target": "backend_tests_test_certification_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L91",
+      "source_location": "L94",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_certification",
-      "target": "backend_tests_test_certification_test_readiness_rejects_more_passed_than_applicable_gates",
+      "target": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L92",
+      "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_readiness_rejects_more_passed_than_applicable_gates",
+      "source": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
       "target": "backend_tests_test_certification_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L92",
+      "source_location": "L95",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "target": "backend_tests_test_certification_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "target": "backend_tests_test_certification_py_parametrize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification",
+      "target": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "target": "backend_tests_test_certification_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "target": "backend_tests_test_certification_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification",
+      "target": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "target": "backend_tests_test_certification_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "target": "backend_tests_test_certification_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification",
+      "target": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "target": "backend_tests_test_certification_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L139",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6369,7 +6720,73 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L42",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
+      "target": "backend_tests_test_certification_seed_demand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
+      "target": "backend_tests_test_certification_seed_demand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
+      "target": "backend_tests_test_certification_seed_demand",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "target": "backend_tests_test_certification_readiness_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "target": "backend_tests_test_certification_readiness_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "target": "backend_tests_test_certification_readiness_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L141",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6384,28 +6801,28 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_rationale_24",
+      "source": "backend_tests_test_certification_rationale_25",
       "target": "backend_tests_test_certification_clear_certification_collections",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_rationale_40",
+      "source": "backend_tests_test_certification_rationale_41",
       "target": "backend_tests_test_certification_client",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L40",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_certification_rationale_48",
-      "target": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
+      "target": "backend_tests_test_certification_seed_demand",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
@@ -6414,32 +6831,83 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_rationale_67",
-      "target": "backend_tests_test_certification_test_transition_rejects_invalid_path_and_blank_terminal_note",
+      "source": "backend_tests_test_certification_rationale_60",
+      "target": "backend_tests_test_certification_readiness_payload",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L67",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_rationale_76",
-      "target": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
+      "source": "backend_tests_test_certification_rationale_70",
+      "target": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L76",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_rationale_93",
-      "target": "backend_tests_test_certification_test_readiness_rejects_more_passed_than_applicable_gates",
+      "source": "backend_tests_test_certification_rationale_86",
+      "target": "backend_tests_test_certification_test_transition_persists_history_and_rejects_stale_version",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L93",
+      "source_location": "L86",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_rationale_96",
+      "target": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_rationale_115",
+      "target": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_rationale_128",
+      "target": "backend_tests_test_certification_test_readiness_handles_zero_gates_ready_conditional_stale_and_cross_scope",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_rationale_140",
+      "target": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6449,7 +6917,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -6460,28 +6928,70 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_integration_test_portfolio_to_demand_to_readiness_journey_persists_all_workflow_records",
+      "source": "backend_tests_test_integration_test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records",
       "target": "backend_tests_test_integration_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L37",
+      "source_location": "L38",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_integration",
-      "target": "backend_tests_test_integration_test_portfolio_to_demand_to_readiness_journey_persists_all_workflow_records",
+      "target": "backend_tests_test_integration_test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L38",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_cross_scope_failure_keeps_all_collections_and_audits_consistent",
+      "target": "backend_tests_test_integration_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_tests_test_integration_test_cross_scope_failure_keeps_all_collections_and_audits_consistent",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans",
+      "target": "backend_tests_test_integration_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration",
+      "target": "backend_tests_test_integration_test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6496,33 +7006,53 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_integration_rationale_24",
+      "source": "backend_tests_test_integration_rationale_25",
       "target": "backend_tests_test_integration_reset_workflow_data",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_integration_rationale_39",
-      "target": "backend_tests_test_integration_test_portfolio_to_demand_to_readiness_journey_persists_all_workflow_records",
+      "source": "backend_tests_test_integration_rationale_40",
+      "target": "backend_tests_test_integration_test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L39",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_58",
+      "target": "backend_tests_test_integration_test_cross_scope_failure_keeps_all_collections_and_audits_consistent",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_rationale_82",
+      "target": "backend_tests_test_integration_test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_portfolio",
-      "target": "backend_tests_test_portfolio_py_asyncio",
-      "relation": "imports",
+      "target": "datetime",
+      "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L3",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6532,7 +7062,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L23",
+      "source_location": "L30",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -6543,7 +7073,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L24",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6553,7 +7083,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L43",
+      "source_location": "L46",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
@@ -6564,7 +7094,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L44",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6575,7 +7105,7 @@
       "context": "generic_arg",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L44",
+      "source_location": "L47",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6585,113 +7115,241 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L56",
+      "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_tests_test_portfolio_collection_counts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "target": "backend_tests_test_portfolio_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L75",
+      "source_location": "L79",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_portfolio",
-      "target": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "target": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L76",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "source": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "target": "backend_tests_test_portfolio_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L76",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "source": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
       "target": "backend_tests_test_portfolio_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L99",
+      "source_location": "L96",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_portfolio",
-      "target": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "target": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L100",
+      "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "source": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
       "target": "backend_tests_test_portfolio_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L100",
+      "source_location": "L97",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
+      "source": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
       "target": "backend_tests_test_portfolio_py_asyncio",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L121",
+      "source_location": "L105",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
+      "target": "backend_tests_test_portfolio_py_parametrize",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L106",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast"
     },
     {
       "source": "backend_tests_test_portfolio",
-      "target": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
+      "target": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L122",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
+      "source": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
       "target": "backend_tests_test_portfolio_py_asyncclient",
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L122",
+      "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
+      "source": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "target": "backend_tests_test_portfolio_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
       "source": "backend_tests_test_portfolio",
-      "target": "backend_tests_test_portfolio_test_production_auth_mode_rejects_development_identity",
+      "target": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L139",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "target": "backend_tests_test_portfolio_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_tests_test_portfolio_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "target": "backend_tests_test_portfolio_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L156",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "target": "backend_tests_test_portfolio_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_invalid_development_identity_returns_401",
+      "target": "backend_tests_test_portfolio_py_asyncio",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L172",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_tests_test_portfolio_test_invalid_development_identity_returns_401",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L173",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_invalid_development_identity_returns_401",
+      "target": "backend_tests_test_portfolio_py_asyncclient",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L173",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6702,40 +7360,84 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L52",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "source": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "target": "backend_tests_test_portfolio_valid_payload",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L78",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "source": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
       "target": "backend_tests_test_portfolio_valid_payload",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L102",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
+      "source": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
       "target": "backend_tests_test_portfolio_valid_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
+      "target": "backend_tests_test_portfolio_collection_counts",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "target": "backend_tests_test_portfolio_valid_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "target": "backend_tests_test_portfolio_collection_counts",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
       "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_tests_test_portfolio_valid_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -6750,72 +7452,112 @@
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_25",
+      "source": "backend_tests_test_portfolio_rationale_32",
       "target": "backend_tests_test_portfolio_clear_test_collections",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L25",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_45",
+      "source": "backend_tests_test_portfolio_rationale_48",
       "target": "backend_tests_test_portfolio_client",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L45",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_57",
+      "source": "backend_tests_test_portfolio_rationale_55",
       "target": "backend_tests_test_portfolio_valid_payload",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L57",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_77",
-      "target": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "source": "backend_tests_test_portfolio_rationale_70",
+      "target": "backend_tests_test_portfolio_collection_counts",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L77",
+      "source_location": "L70",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_101",
-      "target": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "source": "backend_tests_test_portfolio_rationale_81",
+      "target": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L101",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_123",
-      "target": "backend_tests_test_portfolio_test_list_is_bounded_and_requires_configured_identity",
+      "source": "backend_tests_test_portfolio_rationale_98",
+      "target": "backend_tests_test_portfolio_test_listing_is_actor_scoped_and_does_not_serialize_another_actors_record",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L123",
+      "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_rationale_140",
-      "target": "backend_tests_test_portfolio_test_production_auth_mode_rejects_development_identity",
+      "source": "backend_tests_test_portfolio_rationale_110",
+      "target": "backend_tests_test_portfolio_test_invalid_or_boundary_application_fields_return_problem_details_without_writes",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L140",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_rationale_121",
+      "target": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_rationale_138",
+      "target": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_rationale_158",
+      "target": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_rationale_174",
+      "target": "backend_tests_test_portfolio_test_invalid_development_identity_returns_401",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L174",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7574,6 +8316,28 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_components_applicationform_test",
+      "target": "frontend_src_components_applicationform",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationForm.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_applicationform_test",
+      "target": "frontend_src_components_applicationform_applicationform",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationForm.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_components_applicationform",
       "target": "frontend_src_types",
       "relation": "imports_from",
@@ -7669,6 +8433,60 @@
       "_origin": "ast"
     },
     {
+      "source": "frontend_src_components_applicationtable_test",
+      "target": "frontend_src_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_applicationtable_test",
+      "target": "frontend_src_types_applicationrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_applicationtable_test",
+      "target": "frontend_src_components_applicationtable",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_applicationtable_test",
+      "target": "frontend_src_components_applicationtable_applicationtable",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_applicationtable_test",
+      "target": "frontend_src_components_applicationtable_test_application",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ApplicationTable.test.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "frontend_src_components_applicationtable",
       "target": "frontend_src_types",
       "relation": "imports_from",
@@ -7707,6 +8525,60 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/ApplicationTable.tsx",
       "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_demandtransitionform_test",
+      "target": "frontend_src_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_demandtransitionform_test",
+      "target": "frontend_src_types_demandrecord",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_demandtransitionform_test",
+      "target": "frontend_src_components_demandtransitionform",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_demandtransitionform_test",
+      "target": "frontend_src_components_demandtransitionform_demandtransitionform",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_demandtransitionform_test",
+      "target": "frontend_src_components_demandtransitionform_test_transitioneddemand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/DemandTransitionForm.test.tsx",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -7771,6 +8643,60 @@
       "confidence": "EXTRACTED",
       "source_file": "frontend/src/components/DemandTransitionForm.tsx",
       "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_readinesspanel_test",
+      "target": "frontend_src_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_readinesspanel_test",
+      "target": "frontend_src_types_readinesssnapshot",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_readinesspanel_test",
+      "target": "frontend_src_components_readinesspanel",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_readinesspanel_test",
+      "target": "frontend_src_components_readinesspanel_readinesspanel",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "frontend_src_components_readinesspanel_test",
+      "target": "frontend_src_components_readinesspanel_test_snapshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend/src/components/ReadinessPanel.test.tsx",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8312,6 +9238,17 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_api_certification",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/certification.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_api_portfolio",
       "target": "backend_app_certification_repository_certificationrepository",
       "relation": "imports",
@@ -8379,6 +9316,17 @@
     },
     {
       "source": "backend_app_api_portfolio",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_api_portfolio",
       "target": "backend_app_portfolio_repository_applicationrepository",
       "relation": "imports",
       "context": "import",
@@ -8439,7 +9387,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L21",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8495,6 +9443,17 @@
       "confidence": "EXTRACTED",
       "source_file": "backend/app/certification/service.py",
       "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_certification_service",
+      "target": "backend_app_platform_context_requestcontext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/service.py",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8604,7 +9563,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8615,7 +9574,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8692,7 +9651,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8703,29 +9662,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_portfolio",
-      "target": "backend_app_core_config_get_settings",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_portfolio.py",
       "source_location": "L19",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
-      "source": "backend_tests_test_portfolio",
-      "target": "backend_app_platform_context_get_development_identity",
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L141",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8736,7 +9673,84 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L144",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_platform_audit_auditservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_platform_context_requestcontext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_platform_errors_domainvalidationerror",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_portfolio_repository_applicationrepository",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_portfolio_schemas_applicationcreate",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio",
+      "target": "backend_app_portfolio_service_applicationservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L27",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8840,17 +9854,6 @@
       "_origin": "ast"
     },
     {
-      "source": "frontend_src_types_applicationrecord",
-      "target": "frontend_src_types_applicationcreatecommand",
-      "relation": "inherits",
-      "context": "type",
-      "confidence": "EXTRACTED",
-      "source_file": "frontend/src/types.ts",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast"
-    },
-    {
       "source": "backend_app_api_certification_get_certification_service",
       "target": "backend_app_certification_service_certificationservice",
       "relation": "calls",
@@ -8879,7 +9882,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8890,7 +9893,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8901,7 +9904,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L36",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8912,7 +9915,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L51",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -8923,29 +9926,29 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L51",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_production_auth_mode_rejects_development_identity",
-      "target": "backend_app_platform_context_get_development_identity",
+      "source": "backend_tests_test_certification_seed_demand",
+      "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L148",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_production_auth_mode_rejects_development_identity",
-      "target": "backend_app_core_config_settings",
+      "source": "backend_tests_test_portfolio_collection_counts",
+      "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L148",
+      "source_location": "L71",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9000,6 +10003,16 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_certification_service_certificationservice",
+      "target": "backend_app_platform_context_requestcontext",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "backend/app/certification/service.py",
+      "source_location": "L10",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_platform_audit_auditservice",
       "target": "backend_app_platform_context_requestcontext",
       "relation": "uses",
@@ -9015,7 +10028,7 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "backend/app/platform/context.py",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 0.8,
       "_origin": "ast"
     },
@@ -9050,6 +10063,18 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_api_certification_calculate_readiness",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/api/certification.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
       "source": "backend_app_api_portfolio_list_applications",
       "target": "backend_app_portfolio_schemas_applicationlistdata",
       "relation": "calls",
@@ -9057,7 +10082,19 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L105",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_app_api_portfolio_transition_demand",
+      "target": "backend_app_platform_context_validate_resource_identifier",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9141,7 +10178,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/app/portfolio/service.py",
-      "source_location": "L62",
+      "source_location": "L63",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9153,31 +10190,55 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_transition_persists_history_and_requires_current_version",
+      "source": "backend_tests_test_certification_test_missing_and_cross_scope_demands_return_404_and_403_without_audit",
       "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L56",
+      "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_certification_test_readiness_persists_weighted_snapshot_and_blocks_unwaived_gate_failure",
+      "source": "backend_tests_test_certification_test_terminal_demand_requires_note_and_unsafe_ids_do_not_seed_documents",
       "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_certification.py",
-      "source_location": "L84",
+      "source_location": "L102",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_invalid_fields_return_problem_details_without_persistence",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_certification_test_readiness_blocked_recommendation_persists_owned_snapshot",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L143",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9189,7 +10250,43 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_integration.py",
-      "source_location": "L25",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_portfolio_to_owned_demand_to_readiness_journey_persists_all_records",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_cross_scope_failure_keeps_all_collections_and_audits_consistent",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_integration_test_failed_cross_scope_demand_transition_does_not_block_readiness_or_leave_orphans",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L83",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9201,31 +10298,127 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L30",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_create_application_persists_record_and_audit_event",
+      "source": "backend_tests_test_portfolio_test_create_persists_actor_segment_scope_and_audit_event",
       "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L87",
+      "source_location": "L86",
       "weight": 1.0,
       "_origin": "ast"
     },
     {
-      "source": "backend_tests_test_portfolio_test_invalid_application_returns_problem_details_and_persists_nothing",
+      "source": "backend_tests_test_portfolio_test_unknown_fields_and_xss_like_input_are_rejected_without_persistence",
       "target": "backend_app_core_config_get_settings",
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "backend/tests/test_portfolio.py",
-      "source_location": "L114",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_portfolio_service_applicationservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_portfolio_repository_applicationrepository",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_platform_audit_auditservice",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L144",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_portfolio_schemas_applicationcreate",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_duplicate_unique_index_conflict_writes_no_success_audit",
+      "target": "backend_app_platform_context_requestcontext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "target": "backend_app_core_config_settings",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "backend_tests_test_portfolio_test_production_mode_absent_or_invalid_development_identity_returns_401_problem_details",
+      "target": "backend_app_core_config_get_settings",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L169",
       "weight": 1.0,
       "_origin": "ast"
     },
@@ -9242,18 +10435,212 @@
       "_origin": "ast"
     },
     {
+      "source": "backend_app_api_certification_py_post",
+      "target": "backend_app_api_certification_calculate_readiness",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/certification.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_certification_calculate_readiness",
+      "_tgt": "backend_app_api_certification_py_post"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_databasedependency",
+      "target": "backend_app_api_portfolio_get_certification_service",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_get_certification_service",
+      "_tgt": "backend_app_api_portfolio_py_databasedependency"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_post",
+      "target": "backend_app_api_portfolio_create_application",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_create_application",
+      "_tgt": "backend_app_api_portfolio_py_post"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_post",
+      "target": "backend_app_api_portfolio_transition_demand",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_transition_demand",
+      "_tgt": "backend_app_api_portfolio_py_post"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_identitycontext",
+      "target": "backend_app_api_portfolio_list_applications",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_list_applications",
+      "_tgt": "backend_app_api_portfolio_py_identitycontext"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_identitycontext",
+      "target": "backend_app_api_portfolio_transition_demand",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_transition_demand",
+      "_tgt": "backend_app_api_portfolio_py_identitycontext"
+    },
+    {
+      "source": "backend_app_api_portfolio_py_servicedependency",
+      "target": "backend_app_api_portfolio_list_applications",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/api/portfolio.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_api_portfolio_list_applications",
+      "_tgt": "backend_app_api_portfolio_py_servicedependency"
+    },
+    {
       "source": "backend_app_api_portfolio_py_get",
       "target": "backend_app_api_portfolio_list_applications",
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/api/portfolio.py",
-      "source_location": "L63",
+      "source_location": "L81",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_api_portfolio_list_applications",
       "_tgt": "backend_app_api_portfolio_py_get"
+    },
+    {
+      "source": "backend_app_certification_repository_certificationrepository",
+      "target": "backend_app_certification_service_certificationservice_init",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/service.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_service_certificationservice_init",
+      "_tgt": "backend_app_certification_repository_certificationrepository"
+    },
+    {
+      "source": "backend_app_certification_repository_py_any",
+      "target": "backend_app_certification_repository_certificationrepository_find_latest_readiness",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_repository_certificationrepository_find_latest_readiness",
+      "_tgt": "backend_app_certification_repository_py_any"
+    },
+    {
+      "source": "backend_app_certification_repository_py_any",
+      "target": "backend_app_certification_repository_certificationrepository_insert_readiness_snapshot",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_repository_certificationrepository_insert_readiness_snapshot",
+      "_tgt": "backend_app_certification_repository_py_any"
+    },
+    {
+      "source": "backend_app_certification_repository_py_any",
+      "target": "backend_app_certification_repository_certificationrepository_write_audit",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_repository_certificationrepository_write_audit",
+      "_tgt": "backend_app_certification_repository_py_any"
+    },
+    {
+      "source": "datetime",
+      "target": "backend_app_certification_repository_certificationrepository_transition_demand",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/repository.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_repository_certificationrepository_transition_demand",
+      "_tgt": "datetime"
+    },
+    {
+      "source": "backend_app_certification_schemas_py_field_validator",
+      "target": "backend_app_certification_schemas_demandtransitioncommand_normalize_resolution_note",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/schemas.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_certification_schemas_demandtransitioncommand_normalize_resolution_note",
+      "_tgt": "backend_app_certification_schemas_py_field_validator"
+    },
+    {
+      "source": "backend_app_certification_schemas_py_field_validator",
+      "target": "backend_app_certification_schemas_readinessrequest_ensure_passed_gates_are_applicable",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/schemas.py",
+      "source_location": "L56",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_certification_schemas_readinessrequest_ensure_passed_gates_are_applicable",
+      "_tgt": "backend_app_certification_schemas_py_field_validator"
+    },
+    {
+      "source": "backend_app_certification_schemas_readinessrequest",
+      "target": "backend_app_certification_service_certificationservice_calculate_readiness",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/certification/service.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_origin": "ast",
+      "_src": "backend_app_certification_service_certificationservice_calculate_readiness",
+      "_tgt": "backend_app_certification_schemas_readinessrequest"
     },
     {
       "source": "backend_app_core_config_settings",
@@ -9265,7 +10652,6 @@
       "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_core_config_get_settings",
       "_tgt": "backend_app_core_config_settings"
     },
@@ -9280,8 +10666,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_core_database_connect_database",
-      "_tgt": "backend_app_core_config_settings"
+      "_src": "backend_app_core_config_settings",
+      "_tgt": "backend_app_core_database_connect_database"
     },
     {
       "source": "backend_app_core_config_settings",
@@ -9294,8 +10680,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_platform_context_get_development_identity",
-      "_tgt": "backend_app_core_config_settings"
+      "_src": "backend_app_core_config_settings",
+      "_tgt": "backend_app_platform_context_get_development_identity"
     },
     {
       "source": "backend_app_core_database_py_asyncdatabase",
@@ -9307,7 +10693,6 @@
       "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_core_database_get_database",
       "_tgt": "backend_app_core_database_py_asyncdatabase"
     },
@@ -9321,7 +10706,6 @@
       "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_core_database_disconnect_database",
       "_tgt": "backend_app_core_database_py_fastapi"
     },
@@ -9331,11 +10715,10 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L55",
+      "source_location": "L56",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_correlation_middleware",
       "_tgt": "middleware"
     },
@@ -9346,10 +10729,9 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_handle_domain_validation",
       "_tgt": "backend_app_main_py_request"
     },
@@ -9360,10 +10742,9 @@
       "context": "parameter_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L87",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_handle_request_validation",
       "_tgt": "backend_app_main_py_request"
     },
@@ -9373,11 +10754,10 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L72",
+      "source_location": "L73",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_handle_domain_validation",
       "_tgt": "exception_handler"
     },
@@ -9387,11 +10767,10 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L86",
+      "source_location": "L87",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_handle_request_validation",
       "_tgt": "exception_handler"
     },
@@ -9402,10 +10781,9 @@
       "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L87",
+      "source_location": "L88",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_handle_request_validation",
       "_tgt": "backend_app_main_py_jsonresponse"
     },
@@ -9415,11 +10793,10 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "backend/app/main.py",
-      "source_location": "L112",
+      "source_location": "L113",
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_main_health",
       "_tgt": "backend_app_main_py_get"
     },
@@ -9434,8 +10811,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_service_applicationservice_init",
-      "_tgt": "backend_app_platform_audit_auditservice"
+      "_src": "backend_app_platform_audit_auditservice",
+      "_tgt": "backend_app_portfolio_service_applicationservice_init"
     },
     {
       "source": "backend_app_platform_context_requestcontext",
@@ -9447,7 +10824,6 @@
       "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_platform_context_get_development_identity",
       "_tgt": "backend_app_platform_context_requestcontext"
     },
@@ -9462,8 +10838,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_service_applicationservice_create",
-      "_tgt": "backend_app_platform_context_requestcontext"
+      "_src": "backend_app_platform_context_requestcontext",
+      "_tgt": "backend_app_portfolio_service_applicationservice_create"
     },
     {
       "source": "backend_app_platform_context_py_request",
@@ -9475,7 +10851,6 @@
       "source_location": "L34",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_platform_context_get_development_identity",
       "_tgt": "backend_app_platform_context_py_request"
     },
@@ -9489,7 +10864,6 @@
       "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "_src": "backend_app_platform_errors_domain_validation_handler",
       "_tgt": "backend_app_platform_errors_domainvalidationerror"
     },
@@ -9504,22 +10878,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_service_applicationservice_init",
-      "_tgt": "backend_app_portfolio_repository_applicationrepository"
-    },
-    {
-      "source": "backend_app_portfolio_repository_py_any",
-      "target": "backend_app_portfolio_repository_applicationrepository_list",
-      "relation": "references",
-      "context": "generic_arg",
-      "confidence": "EXTRACTED",
-      "source_file": "backend/app/portfolio/repository.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "_origin": "ast",
-      "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_repository_applicationrepository_list",
-      "_tgt": "backend_app_portfolio_repository_py_any"
+      "_src": "backend_app_portfolio_repository_applicationrepository",
+      "_tgt": "backend_app_portfolio_service_applicationservice_init"
     },
     {
       "source": "backend_app_portfolio_schemas_applicationcreate",
@@ -9532,8 +10892,34 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_service_applicationservice_create",
-      "_tgt": "backend_app_portfolio_schemas_applicationcreate"
+      "_src": "backend_app_portfolio_schemas_applicationcreate",
+      "_tgt": "backend_app_portfolio_service_applicationservice_create"
+    },
+    {
+      "source": "backend_app_portfolio_schemas_py_field_validator",
+      "target": "backend_app_portfolio_schemas_applicationcreate_normalize_nonempty_list",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/portfolio/schemas.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_portfolio_schemas_applicationcreate_normalize_nonempty_list",
+      "_tgt": "backend_app_portfolio_schemas_py_field_validator"
+    },
+    {
+      "source": "backend_app_portfolio_schemas_py_field_validator",
+      "target": "backend_app_portfolio_schemas_applicationcreate_reject_blank_text",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/app/portfolio/schemas.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_app_portfolio_schemas_applicationcreate_reject_blank_text",
+      "_tgt": "backend_app_portfolio_schemas_py_field_validator"
     },
     {
       "source": "applicationrecord",
@@ -9546,8 +10932,8 @@
       "weight": 1.0,
       "_origin": "ast",
       "confidence_score": 1.0,
-      "_src": "backend_app_portfolio_service_applicationservice_list",
-      "_tgt": "applicationrecord"
+      "_src": "applicationrecord",
+      "_tgt": "backend_app_portfolio_service_applicationservice_list"
     },
     {
       "source": "applicationrecord",
@@ -9562,13 +10948,78 @@
       "confidence_score": 1.0,
       "_src": "backend_app_portfolio_service_applicationservice_to_record",
       "_tgt": "applicationrecord"
+    },
+    {
+      "source": "backend_tests_test_certification_py_fixture",
+      "target": "backend_tests_test_certification_clear_certification_collections",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_certification_clear_certification_collections",
+      "_tgt": "backend_tests_test_certification_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_certification_py_fixture",
+      "target": "backend_tests_test_certification_client",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_certification.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_certification_client",
+      "_tgt": "backend_tests_test_certification_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_integration_py_fixture",
+      "target": "backend_tests_test_integration_reset_workflow_data",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_integration.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_integration_reset_workflow_data",
+      "_tgt": "backend_tests_test_integration_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_portfolio_py_fixture",
+      "target": "backend_tests_test_portfolio_clear_test_collections",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_portfolio_clear_test_collections",
+      "_tgt": "backend_tests_test_portfolio_py_fixture"
+    },
+    {
+      "source": "backend_tests_test_portfolio_py_fixture",
+      "target": "backend_tests_test_portfolio_client",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "backend/tests/test_portfolio.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "context": "decorator",
+      "_origin": "ast",
+      "_src": "backend_tests_test_portfolio_client",
+      "_tgt": "backend_tests_test_portfolio_py_fixture"
     }
   ],
   "metadata": {
-    "built_at": "2026-09-17T07:12:45.899800+00:00",
+    "built_at": "2026-09-17T07:54:11.678468+00:00",
     "version": "graph_update-v1",
     "codebase_root": "C:\\artifacts-v2\\T011GSU2iRpR9000117092606182786\\developer",
     "force": true,
-    "files_scanned": 34
+    "files_scanned": 39
   }
 }
