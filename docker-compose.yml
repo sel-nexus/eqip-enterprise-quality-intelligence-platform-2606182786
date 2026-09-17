@@ -1,0 +1,41 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      backend:
+        condition: service_started
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      MONGODB_URI: mongodb://mongo:27017
+      MONGODB_DB: eqip
+      AUTH_MODE: development
+      DEVELOPMENT_USER_ID: compose-dev-user
+      CORS_ORIGINS: http://localhost:8080
+    ports:
+      - "8000:8000"
+    depends_on:
+      mongo:
+        condition: service_started
+      redis:
+        condition: service_started
+
+  mongo:
+    image: mongo:7.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo_data:
