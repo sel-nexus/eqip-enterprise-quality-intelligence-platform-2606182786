@@ -14,7 +14,12 @@ developer_metadata.json
 publish_manifest.yaml
 test_report.yaml
 graphify-out/cache/
+graphify-out/graphify-out/
 graphify-out/cost.json
+graphify-out/.graphify_analysis.json
+graphify-out/.graphify_labels.json
+graphify-out/.graphify_python
+graphify-out/.graphify_root
 frontend/test-results/
 playwright-report/
 *.pyc
