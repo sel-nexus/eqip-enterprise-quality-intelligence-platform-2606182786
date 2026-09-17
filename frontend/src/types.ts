@@ -20,7 +20,7 @@ export interface ApplicationCreateCommand {
   expected_version: number;
 }
 
-export interface ApplicationRecord extends ApplicationCreateCommand {
+export interface ApplicationRecord extends Omit<ApplicationCreateCommand, "expected_version"> {
   application_id: string;
   lifecycle: "active";
   version: number;
