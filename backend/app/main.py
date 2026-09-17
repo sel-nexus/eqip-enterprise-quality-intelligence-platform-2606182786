@@ -9,6 +9,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from app.api.certification import router as certification_router
 from app.api.portfolio import router as portfolio_router
 from app.core.config import get_settings
 from app.core.database import connect_database, disconnect_database
@@ -120,3 +121,4 @@ async def health() -> dict[str, str]:
 
 
 app.include_router(portfolio_router)
+app.include_router(certification_router)

@@ -42,3 +42,37 @@ export async function listApplications(): Promise<ApplicationListData> {
   const envelope = (await response.json()) as ApiEnvelope<ApplicationListData>;
   return envelope.data;
 }
+
+/** Transition a demand through the persisted certification workflow. */
+export async function transitionDemand(
+  demandId: string,
+  command: import("../types").DemandTransitionCommand
+): Promise<import("../types").DemandRecord> {
+  const response = await fetch(`${apiBaseUrl}/api/v1/demands/${encodeURIComponent(demandId)}/transitions`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(command)
+  });
+  if (!response.ok) {
+    return readError(response);
+  }
+  const envelope = (await response.json()) as ApiEnvelope<import("../types").DemandRecord>;
+  return envelope.data;
+}
+
+/** Calculate a persisted, explainable release-readiness snapshot. */
+export async function calculateReadiness(
+  releaseId: string,
+  command: import("../types").ReadinessCommand
+): Promise<import("../types").ReadinessSnapshot> {
+  const response = await fetch(`${apiBaseUrl}/api/v1/releases/${encodeURIComponent(releaseId)}/readiness`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(command)
+  });
+  if (!response.ok) {
+    return readError(response);
+  }
+  const envelope = (await response.json()) as ApiEnvelope<import("../types").ReadinessSnapshot>;
+  return envelope.data;
+}

@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { createApplication, listApplications } from "./api/client";
+import { calculateReadiness, createApplication, listApplications, transitionDemand } from "./api/client";
 import { ApplicationForm } from "./components/ApplicationForm";
 import { ApplicationTable } from "./components/ApplicationTable";
+import { DemandTransitionForm } from "./components/DemandTransitionForm";
+import { ReadinessPanel } from "./components/ReadinessPanel";
 import type { ApplicationCreateCommand, ApplicationRecord } from "./types";
 
 /** Compose the governed portfolio dashboard and API state. */
@@ -49,6 +51,8 @@ export default function App(): React.JSX.Element {
           {notice ? <p className="success-notice" aria-live="polite">{notice}</p> : null}
         </section>
         <ApplicationForm onSubmit={handleCreate} />
+        <DemandTransitionForm onSubmit={transitionDemand} />
+        <ReadinessPanel onSubmit={calculateReadiness} />
         <ApplicationTable applications={applications} loading={loading} error={loadError} onRetry={() => void loadPortfolio()} />
       </div>
     </main>

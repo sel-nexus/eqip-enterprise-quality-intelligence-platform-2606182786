@@ -5,6 +5,9 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, Query
 from pymongo.asynchronous.database import AsyncDatabase
 
+from app.certification.repository import CertificationRepository
+from app.certification.schemas import DemandTransitionCommand, DemandTransitionResponse
+from app.certification.service import CertificationService
 from app.core.database import get_database
 from app.platform.audit import AuditService
 from app.platform.context import IdentityContext
@@ -34,6 +37,21 @@ def get_application_service(database: DatabaseDependency) -> ApplicationService:
 
 
 ServiceDependency = Annotated[ApplicationService, Depends(get_application_service)]
+
+
+def get_certification_service(database: DatabaseDependency) -> CertificationService:
+    """Build a demand certification service from the active database.
+
+    Args:
+        database: Lifespan-owned Mongo database.
+
+    Returns:
+        Certification service for this request.
+    """
+    return CertificationService(CertificationRepository(database))
+
+
+CertificationServiceDependency = Annotated[CertificationService, Depends(get_certification_service)]
 
 
 @router.post(
@@ -85,3 +103,32 @@ async def list_applications(
     """
     items, total = await service.list(limit, offset)
     return ApplicationListResponse(data=ApplicationListData(items=items, total=total), correlation_id=context.correlation_id)
+
+
+@router.post(
+    "/demands/{demand_id}/transitions",
+    response_model=DemandTransitionResponse,
+    status_code=200,
+    summary="Transition a governed demand",
+)
+async def transition_demand(
+    demand_id: str,
+    command: DemandTransitionCommand,
+    context: IdentityContext,
+    service: CertificationServiceDependency,
+) -> DemandTransitionResponse:
+    """Move a persisted demand through one allowed workflow state.
+
+    Args:
+        demand_id: Demand identifier to transition or seed on demand.
+        command: Destination, expected version, and resolution evidence.
+        context: Request identity and correlation context.
+        service: Certification business service.
+
+    Returns:
+        Updated persisted demand envelope.
+    """
+    return DemandTransitionResponse(
+        data=await service.transition_demand(demand_id, command, context),
+        correlation_id=context.correlation_id,
+    )
